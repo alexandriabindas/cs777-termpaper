@@ -2,7 +2,7 @@
 
 This is a document describing our term paper sample code and final results. We decided to do our paper on parameter tuning with PySpark.
 
-## Environment Setup and Prerequisites
+## Environment Setup
 
 
 ## Running the Code Locally
