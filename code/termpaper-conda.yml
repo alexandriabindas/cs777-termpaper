@@ -1,0 +1,4 @@
+name: cs777-termpaper
+
+dependencies:
+  - pyspark
