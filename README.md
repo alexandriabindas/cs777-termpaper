@@ -1,6 +1,6 @@
 # METCS777 Term Paper: Spark Parameter Tuning
 
-This is a document describing our term paper sample code and final results. We decided to do our paper on parameter tuning with PySpark. Our term paper is based on a conference paper that can be found here: [Spark Parameter Tuning via Trial-and-Error](./supporting_docs/spark_param_tuning_conference_paper.pdf).
+This is a document describing our term paper sample code and final results. We decided to do our paper on parameter tuning with PySpark. Our term paper is based on a conference paper that can be found here: [Spark Parameter Tuning via Trial-and-Error](./supporting_docs/spark_param_tuning_conference_paper.pdf)
 
 ## Table of Contents
 - [Environment Setup](#environment-setup-and-prerequisites)
@@ -34,6 +34,10 @@ Follow the instructions from the [Jupyter official docs](https://docs.jupyter.or
 1. Run `jupyter notebook`
 1. Select the kernel you just named "Python (Term Paper)"
 1. Use the Jupyter UI to run the code
+
+### Running Spark History Server
+/Users/alexbindas/anaconda3/envs/cs777-termpaper/lib/python3.12/site-packages/pyspark/sbin ./start-history-server.sh
+http://alexandrias-mbp:18080/?showIncomplete=false
 
 ### 2. Running on VS Code
 You can choose to run directly in VS Code by following simply opening the file and clicking the play button on the side of the cell you would like to run.
@@ -84,3 +88,10 @@ For the following deprecated configurations, you can refer to the [Unified Memor
     - Deprecated in spark 1.6.0+
     - This is read only if spark.memory.useLegacyMode is enabled. It was the fraction of Java heap to use for Spark's memory cache
 
+
+### Our Findings Running Experiments
+![results_duration](./results/history_server.jpg)
+
+![results_duration](./results/results_duration.png)
+
+![results_shuffle_read_write](./results/results_shuffle_read_write.png)
