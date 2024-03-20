@@ -6,8 +6,9 @@ This is a document describing our term paper sample code and final results. We d
 - [Environment Setup](#environment-setup-and-prerequisites)
     - [Using Conda](#using-conda)
 - [Running the Code Locally](#running-the-code-locally)
-    - [Running on Jupyter Notebook](#1-running-on-jupyter-notebook)
-    - [Running on VS Code](#2-running-on-vs-code)
+    - [Running on Jupyter Notebook](#1-running-code-on-jupyter-notebook)
+    - [Running on VS Code](#2-running-code-on-vs-code)
+- [Configuring Spark History Server](#spark-history-server)
 - [Our Results and Findings](#our-results)
     - [Spark config defaults](#default-sparkconfig-changes-spark-152---spark-351)
     - [Spark config deprecations since the conference paper](#deprecations)
@@ -28,14 +29,21 @@ This section will describe how to set up the local environment using a python vi
 ## Running the Code Locally
 To run the code locally on your machine, you can choose to follow the Jupyter Notebook section or the VS Code section.
 
-### 1. Running on Jupyter Notebook
+### 1. Running code on Jupyter Notebook
 Follow the instructions from the [Jupyter official docs](https://docs.jupyter.org/en/latest/running.html)  to install the required CLI command and any additional packages you may need for your machine.
 
 1. Run `jupyter notebook`
 1. Select the kernel you just named "Python (Term Paper)"
 1. Use the Jupyter UI to run the code
 
-## Running Spark History Server
+### 2. Running code on VS Code
+You can choose to run directly in VS Code by following simply opening the file and clicking the play button on the side of the cell you would like to run.
+
+1. Open up VS Code
+1. Select the kernel you just named "Python (Term Paper)"
+1. Click the play button on the side of the cell to run the code
+
+## Spark History Server
 You can set the event log location in your SparkConf to point to a local spark-events/logs location where you will host a local spark history server. This is crucial for debugging and profiling performance metrics locally.
 
 To start the history server run these example commands (replace with your local directory), and navigate to: http://localhost:18080
@@ -58,12 +66,6 @@ spark: SparkSession = SparkSession.builder \
     .getOrCreate()
 ```
 
-### 2. Running on VS Code
-You can choose to run directly in VS Code by following simply opening the file and clicking the play button on the side of the cell you would like to run.
-
-1. Open up VS Code
-1. Select the kernel you just named "Python (Term Paper)"
-1. Click the play button on the side of the cell to run the code
 
 ## Our Results
 This section will discuss the final results and finding of our term paaper.
