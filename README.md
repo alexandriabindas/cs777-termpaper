@@ -90,8 +90,7 @@ For the following deprecated configurations, you can refer to the [Unified Memor
 
 
 ### Our Findings Running Experiments
-![results_duration](./results/history_server.jpg)
+![history server](./results/history_server.jpg)
 
-![results_duration](./results/results_duration.png)
+![all_results](./results/all_results.png)
 
-![results_shuffle_read_write](./results/results_shuffle_read_write.png)
