@@ -35,9 +35,28 @@ Follow the instructions from the [Jupyter official docs](https://docs.jupyter.or
 1. Select the kernel you just named "Python (Term Paper)"
 1. Use the Jupyter UI to run the code
 
-### Running Spark History Server
-/Users/alexbindas/anaconda3/envs/cs777-termpaper/lib/python3.12/site-packages/pyspark/sbin ./start-history-server.sh
-http://alexandrias-mbp:18080/?showIncomplete=false
+## Running Spark History Server
+You can set the event log location in your SparkConf to point to a local spark-events/logs location where you will host a local spark history server. This is crucial for debugging and profiling performance metrics locally.
+
+To start the history server run these example commands (replace with your local directory), and navigate to: http://localhost:18080
+```
+cd /Users/alexbindas/anaconda3/envs/cs777-termpaper/lib/python3.12/site-packages/pyspark/sbin
+./start-history-server.sh
+```
+
+### Configuring SparkHistory server locally
+If you don't already have a dedicated spark-events directory, create one (`/tmp/spark-events`)
+
+```python
+spark: SparkSession = SparkSession.builder \
+    .master("local[*]") \
+    .appName(app_name) \
+    ... # Add configs here
+    .config("spark.eventLog.compress", "true")\
+    .config("spark.eventLog.enabled", "true")\
+    .config("spark.eventLog.dir", "/tmp/spark-events")\
+    .getOrCreate()
+```
 
 ### 2. Running on VS Code
 You can choose to run directly in VS Code by following simply opening the file and clicking the play button on the side of the cell you would like to run.
