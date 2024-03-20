@@ -42,7 +42,6 @@ You can choose to run directly in VS Code by following simply opening the file a
 1. Select the kernel you just named "Python (Term Paper)"
 1. Click the play button on the side of the cell to run the code
 
-
 ## Our Results
 This section will discuss the final results and finding of our term paaper.
 
@@ -72,16 +71,16 @@ For the following deprecated configurations, you can refer to the [Unified Memor
     - This configuration seems to be deprecated in version 1.6.0, however there is not any official documentation in the changelog and it's a little unclear.
     - This PR gives a little bit of background into why the configuraton doesn't exist: https://github.com/apache/spark/pull/8089. In short, it seems that the deprecation of HashShuffleManager by default has made this configuration obsolete.
 
-- `spark.shuffle.manager` = sort
+- `spark.shuffle.manager = sort (default)`
     - Deprecated in 2.x
     - `HashShuffleManager` was removed entirely in version 2.x (https://issues.apache.org/jira/browse/SPARK-14667)
     - For more details on this decision refer to this paper: https://www.waitingforcode.com/apache-spark/shuffling-in-spark/read#sort_shuffle_manager
 
-- `spark.shuffle.memoryFraction` = 0.2
+- `spark.shuffle.memoryFraction = 0.2 (default)`
     - Deprecated in spark 1.6.0+
     - This is read only if spark.memory.useLegacyMode is enabled. It was the fraction of Java heap to use for aggregation and cogroups during shuffles
 
-- `spark.storage.memoryFraction` = 0.6
+- `spark.storage.memoryFraction = 0.6 (default)`
     - Deprecated in spark 1.6.0+
     - This is read only if spark.memory.useLegacyMode is enabled. It was the fraction of Java heap to use for Spark's memory cache
 
