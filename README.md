@@ -2,10 +2,21 @@
 
 This is a document describing our term paper sample code and final results. We decided to do our paper on parameter tuning with PySpark. Our term paper is based on a conference paper that can be found here: [Spark Parameter Tuning via Trial-and-Error](./supporting_docs/spark_param_tuning_conference_paper.pdf).
 
-## Environment Setup
+## Table of Contents
+- [Environment Setup](#environment-setup-and-prerequisites)
+    - [Using Conda](#using-conda)
+- [Running the Code Locally](#running-the-code-locally)
+    - [Running on Jupyter Notebook](#1-running-on-jupyter-notebook)
+    - [Running on VS Code](#2-running-on-vs-code)
+- [Our Results and Findings](#our-results)
+    - [Spark config defaults](#default-sparkconfig-changes-spark-152---spark-351)
+    - [Spark config deprecations since the conference paper](#deprecations)
+
+
+## Environment Setup and Prerequisites
 This section will describe how to set up the local environment using a python virtual env.
 
-## Using Conda & Jupyter Notebook
+### Using Conda
 1. Download [Anaconda](https://www.anaconda.com/download) from the official website.
 1. Run `conda install -y jupyter`
 1. Change directories into `code`
@@ -14,28 +25,23 @@ This section will describe how to set up the local environment using a python vi
 1. If you don't have this library: `pip install ipykernel`
 1. Run: `python -m ipykernel install --user --name pytorch --display-name "Python (METCS777 Term Paper)"`
 
-### Running the Code Locally
+## Running the Code Locally
 To run the code locally on your machine, you can choose to follow the Jupyter Notebook section or the VS Code section.
 
-#### 1. Running on Jupyter Notebook
+### 1. Running on Jupyter Notebook
 Follow the instructions from the [Jupyter official docs](https://docs.jupyter.org/en/latest/running.html)  to install the required CLI command and any additional packages you may need for your machine.
 
 1. Run `jupyter notebook`
 1. Select the kernel you just named "Python (Term Paper)"
 1. Use the Jupyter UI to run the code
 
-#### 2. Running on VS Code
+### 2. Running on VS Code
 You can choose to run directly in VS Code by following simply opening the file and clicking the play button on the side of the cell you would like to run.
 
 1. Open up VS Code
 1. Select the kernel you just named "Python (Term Paper)"
 1. Click the play button on the side of the cell to run the code
 
-## Code Structure
-The code structure for the demo is fairly simple with a preprocessing script to clean and output the clean data and a jupyter notebook to run examples of the parameter tuning results.
-
-### Preprocessing and cleaning the data
-Run this `cd code && python3 preprocess_and_clean_data.py` to generate clean data into ./clean_data which will handle filtering out outliers and invalid values from the dataset.
 
 ## Our Results
 This section will discuss the final results and finding of our term paaper.
@@ -59,7 +65,7 @@ This section lists the default config for each optimal configuration from the [c
 
 - `spark.shuffle.file.buffer` = 32k
 
-### Deprecations:
+## Deprecations:
 For the following deprecated configurations, you can refer to the [Unified Memory Management Spark Paper](./supporting_docs/unified-memory-management-spark-10000.pdf). In short, there is no longer dedicated cache/shuffle memory. All memory can be used for either operation.
 
 - `spark.shuffle.consolidateFiles = False (default)`
