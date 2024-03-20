@@ -41,9 +41,7 @@ Run this `cd code && python3 preprocess_and_clean_data.py` to generate clean dat
 This section will discuss the final results and finding of our term paaper.
 
 ### Default SparkConfig Changes: Spark 1.5.2 -> Spark 3.5.1
-This section lists the default config for each optimal configuration from the [conference paper](./supporting_docs/spark_param_tuning_conference_paper.pdf)
-
-The version of Spark at the time of the original experiments was 1.5.2 and a lot has changed since then.
+This section lists the default config for each optimal configuration from the [conference paper](./supporting_docs/spark_param_tuning_conference_paper.pdf) The version of Spark at the time of the original experiments was 1.5.2 and a lot has changed since then.
 
 - `spark.reducer.maxSizeInFlight` = 48m
 
@@ -62,8 +60,6 @@ The version of Spark at the time of the original experiments was 1.5.2 and a lot
 - `spark.shuffle.file.buffer` = 32k
 
 ### Deprecations:
-This section will highlight the deprecations since the conference paper was written, and the reasons for each deprecation of an optimial config.
-
 For the following deprecated configurations, you can refer to the [Unified Memory Management Spark Paper](./supporting_docs/unified-memory-management-spark-10000.pdf). In short, there is no longer dedicated cache/shuffle memory. All memory can be used for either operation.
 
 - `spark.shuffle.consolidateFiles = False (default)`
